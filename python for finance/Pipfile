@@ -10,8 +10,12 @@ pandas-datareader = "*"
 matplotlib = "*"
 beautifulsoup4 = "*"
 scikit-learn = "*"
+mplfinance = "*"
+mpl-finance = {file = "https://github.com/matplotlib/mpl_finance/archive/master.zip"}
+install = "*"
 
 [requires]
 python_version = "3.8"
 
 [dev-packages]
+mpl-finance = {file = "https://github.com/matplotlib/mpl_finance/archive/master.zip"}

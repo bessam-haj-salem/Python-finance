@@ -1,0 +1,2 @@
+when lock error:
+pipenv lock --pre --clear

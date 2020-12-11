@@ -1,6 +1,7 @@
 import datetime as dt
 import matplotlib.pyplot as plt  # create graphs
 from matplotlib import style
+from mpl_finance import candlestick_ohlc
 import pandas as pd
 import pandas_datareader.data as web  # grab data from an api
 
@@ -20,19 +21,21 @@ df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
 # print(df['Adj Close'])  # print the choosed column
 # print(df[['Open', 'High']].head())  # select OPen and High column
 # plt.show()
-df['100ma'] = df['Adj Close'].rolling(
-    window=100, min_periods=0).mean()  # moving average
+# df['100ma'] = df['Adj Close'].rolling(
+#     window=100, min_periods=0).mean()  # moving average
 # df.dropna(inplace=True) # == : df = df.dropna, this the way the have the first 100 days populated
 
-print(df.head())
+# print(df.head())
 
 # number of 6 rows and 1 column , start on row:0 column:0 top corner,
 ax1 = plt.subplot2grid((6, 1), (0, 0), rowspan=5, colspan=1)  # first graph
 ax2 = plt.subplot2grid((6, 1), (5, 0), rowspan=1,
                        colspan=1, sharex=ax1)  # second graph, sharex will share only the zoom
 
-ax1.plot(df.index, df['Adj Close'])  # here two superpose chartss
-ax1.plot(df.index, df['100ma'])
-ax2.plot(df.index, df['Volume'])  # another chart alone
+# ax1.plot(df.index, df['Adj Close'])  # here two superpose chartss
+# ax1.plot(df.index, df['100ma'])
+# ax2.plot(df.index, df['Volume'])  # another chart alone
+
+
 
 plt.show()
